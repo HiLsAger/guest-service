@@ -4,10 +4,10 @@ use Hilsager\GuestService\Api\RestApi;
 
 return [
     'db' => [
-        'host' => 'localhost',
-        'dbname' => 'guest-service',
-        'user' => 'root',
-        'password' => '123',
+        'host' => 'db',
+        'dbname' => 'myDb',
+        'user' => 'user',
+        'password' => 'test',
         'driver' => 'mysqli'
     ],
     'rules' => [

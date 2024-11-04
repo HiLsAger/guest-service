@@ -20,7 +20,7 @@ class RestMessage
             $this->message = $message;
             $this->data = [
                 'message' => $statusOrData
-                    ? 'Запись успешно обновлена'
+                    ? 'Успех!'
                     : 'Ничего не изменилось :('
             ];
             $this->code = $code;

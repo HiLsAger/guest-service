@@ -45,7 +45,7 @@ class Rest
                     $restMessage = new RestMessage($entity->insertOrUpdateEntity($content['id'] ?? 0));
                     break;
                 case Request::METHOD_DELETE:
-                    $restMessage = new RestMessage([], $entity->deleteEntity($request->getContent('id')));
+                    $restMessage = new RestMessage($entity->deleteEntity($content['id'] ?? null));
                     break;
             }
         }

@@ -27,7 +27,10 @@ class Validator
 
     public function validate(): bool
     {
-        if($this->method === Request::METHOD_GET) {
+        if(
+            $this->method === Request::METHOD_GET
+            || $this->method === Request::METHOD_DELETE
+        ) {
             return $this->validateData();
         }
 

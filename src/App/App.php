@@ -5,6 +5,7 @@ namespace Hilsager\GuestService\App;
 use Hilsager\GuestService\DB\Connect;
 use Doctrine\DBAL\Connection;
 use Hilsager\GuestService\Rest;
+use Hilsager\GuestService\RestMessage;
 use Symfony\Component\HttpFoundation\Request;
 
 class App
@@ -37,8 +38,12 @@ class App
         $this->setHeader('Content-Type', 'application/json');
         $this->setHeader('Access-Control-Allow-Origin', '*');
 
-        $rest = $this->getRest($this->request->getRequestUri());
-        $rest->run();
+        try {
+            $rest = $this->getRest($this->request->getRequestUri());
+            $rest->run();
+        } catch (\Exception $e) {
+            $this->render404();
+        }
     }
 
     public function setHeader(string $key, string $value): void
@@ -75,5 +80,11 @@ class App
         }
 
         return $this->config['db'];
+    }
+
+    protected function render404()
+    {
+        $restMessage = new RestMessage([], 'Не удалось ничего найти', 404);
+        echo json_encode($restMessage->prepareResponse());
     }
 }
