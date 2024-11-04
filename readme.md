@@ -1,5 +1,6 @@
 ## Запуск приложения
 ```
+composer install
 docker-composer up --build
 ```
 ## Хосты:
