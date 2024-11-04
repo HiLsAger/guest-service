@@ -1,0 +1,19 @@
+{
+    "name": "hilsager/guest-service",
+    "autoload": {
+        "psr-4": {
+            "Hilsager\\GuestService\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "HiLsAger",
+            "email": "47248609+HiLsAger@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "doctrine/dbal": "^4.2",
+        "symfony/http-foundation": "^6.4",
+        "giggsey/libphonenumber-for-php": "^8.13"
+    }
+}
