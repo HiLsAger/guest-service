@@ -1,4 +1,10 @@
 ## Запуск приложения
+1. Установить зависимости composer
+```
+composer install
+```
+2. Переименовать файл save.config.php на config.php
+3. Запустить docker-compose
 ```
 docker-composer up --build
 ```
