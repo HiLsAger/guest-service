@@ -5,7 +5,7 @@ use Hilsager\GuestService\Api\RestApi;
 return [
     'db' => [
         'host' => 'db',
-        'dbname' => 'myDb',
+        'dbname' => 'guest-service',
         'user' => 'user',
         'password' => 'test',
         'driver' => 'mysqli'
